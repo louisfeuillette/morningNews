@@ -6,6 +6,9 @@ var bcrypt = require('bcrypt');
 
 var userModel = require('../models/users')
 
+require('dotenv').config()
+console.log(process.env.API_KEY)
+
 router.post('/wishList', async function(req,res,next){
 
   var user = await userModel.findOne({token: req.body.token})

@@ -6,7 +6,11 @@ var options = {
     useNewUrlParser: true,
 }
 
-mongoose.connect('mongodb+srv://admin2:admin2@cluster0.ojbg1.mongodb.net/morningnews?retryWrites=true&w=majority',
+var DB_USERNAME = process.env.DB_USERNAME
+var DB_PASSWORD = process.env.DB_PASSWORD
+var DB_CLUSTER_NAME = process.env.DB_CLUSTER_NAME
+
+mongoose.connect(`mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@${DB_CLUSTER_NAME}/morningnews?retryWrites=true&w=majority`,
     options,
     function(err){
         console.log(err);
